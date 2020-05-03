@@ -1,11 +1,20 @@
 // Get items from local storage **see if poss to clear or only match current date
 // ======================================================
-    function getLocalStorage(key) {
-        var value = localStorage.getItem("key");
-        if (value) {
-            $('#text${"key"}').text(value);
-        }
-        console.log(value)
+function getLocalStorage(i) {
+//     var eId = localStorage.setItem(eId, eText);
+//     var eText = JSON.parse(localStorage.getItem('eText'));
+    
+//     if (eId && eText === null) {
+//       return;
+//     }
+//     // eText = $(this).parent().siblings().children(".description").val();
+//     // userTextSpan(eId).textContent = eText;
+//     // console.log(key);
+//     // userEmailSpan.textContent = email;
+//     // userPasswordSpan.textContent = password;
+// //   }
+//     console.log(eId[i]);
+ 
     }
 
 // Main function
@@ -13,20 +22,18 @@
 $( document ).ready(function() {
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
     for (var i = 9; i < 18; i++) {
-    
         // create a row
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
-
+        var padL = $('<div class="col-sm-1"> <p class="padL"></p>');
         // create a column to hold the time
-        var hour = $('<div class="col-sm-2"> <p class="hour">' + formatTime(i) + '</p>');
-
+        var hour = $('<div class="col-sm-1"> <p class="hour">' + formatTime(i) + '</p>');
         //create a column to hold the description
-        var desc = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Add your event here..."></textarea>`);        
-    
+        var desc = $(`<div class="col-sm-8 past"><textarea id=text${i} class="description" placeholder="Event goes here"></textarea>`);        
         //create column to hold the save btn https://fontawesomeicons.com/save
-        var save = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
-        
+        var save = $(`<div class="col-sm-1"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
+
         // append column to row
+        row.append(padL);
         row.append(hour);
         row.append(desc);
         row.append(save);
@@ -37,14 +44,14 @@ $( document ).ready(function() {
         // get data from local storage
         getLocalStorage(i);
     }
-
-// Format time to show am-pm
+ 
+// Format time
 // ======================================================
     function formatTime(hours) {
-        var ampm = hours >= 12 ? "pm" : "am";
+        var amPm = hours >= 12 ? "pm" : "am";
         hours = hours % 12;
         hours = hours ? hours : 12;
-        return hours + ampm;
+        return hours + amPm;
     }
 formatTime();
 
@@ -67,11 +74,9 @@ formatTime();
 // ======================================================
     var saveBtn = $(".saveBtn");
     saveBtn.on("click", function(){
-        var eventId = $(this).attr("id");
-        var eventText = $(this).parent().siblings().children(".description").val();
-        localStorage.setItem(eventId, eventText);
+        // preventDefault();
+        var eId = $(this).attr("id");
+        var eText = $(this).parent().siblings().children(".description").val();
+        localStorage.setItem(eId, eText);
     });
-
-
 });
-

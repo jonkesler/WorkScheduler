@@ -1,5 +1,23 @@
+local Storage
+https://stackoverflow.com/questions/58588819/getting-items-from-localstorage-returns-null
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours
+
 https://stackoverflow.com/questions/17003202/how-to-get-am-or-pm
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours
 
-git@github.com:jonkesler/WorkScheduler.git
+https://stackoverflow.com/questions/2163558/how-to-insert-text-in-a-td-with-id-using-javascript
 
+https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
+
+template literals
+https://css-tricks.com/template-literals/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+fonts - icons
+https://fontawesomeicons.com/save
+
+
+Repository URL: https://github.com/jonkesler/WorkScheduler.git
+Repository SSH: git@github.com:jonkesler/WorkScheduler.git
 https://jonkesler.github.io/WorkScheduler/
